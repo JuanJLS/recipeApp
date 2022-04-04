@@ -30,7 +30,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ShoppingListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,6 +19,7 @@ export class RecipeService {
     ),
   ];
   getRecipes() {
+    //To not return the direct reference, but a copy, we call slice()
       return this.recipes.slice();
   }
 }
