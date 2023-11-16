@@ -1,0 +1,14 @@
+.space-btn {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.ingredients-row{
+    margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 3px solid red;
+
+}
