@@ -12,7 +12,7 @@ import { ShoppingListService } from '../shopping-list.service';
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   editMode = false;
-  editedItemIdex: number;
+  editedItemIndex: number;
   editedItem: Ingredient;
 
   showAlert: boolean = false;
@@ -25,7 +25,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       .subscribe(
         (index: number) => {
           this.editMode = true;
-          this.editedItemIdex = index;
+          this.editedItemIndex = index;
           this.editedItem = this.slService.getIngredient(index);
           this.slForm.setValue({
             name: this.editedItem.name,
@@ -41,7 +41,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.showAlert = true;
     this.showAlertInterval();
     if(this.editMode) { 
-      this.slService.updateIngredient(this.editedItemIdex, newIngredient);
+      this.slService.updateIngredient(this.editedItemIndex, newIngredient);
     } else { 
       this.slService.addIngredient(newIngredient);
     }
@@ -65,7 +65,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   }
 
   onDelete(){
-    this.slService.deleteIngredient(this.editedItemIdex);
+    this.slService.deleteIngredient(this.editedItemIndex);
     this.onClear();
   }
 }
